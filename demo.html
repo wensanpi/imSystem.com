@@ -479,7 +479,7 @@
           </el-button>
         </el-form-item>
         <div style="text-align: center; color: #909399; font-size: 12px;">
-          提示：用户名和密码任意输入即可登录
+          账号：nihao &nbsp;&nbsp; 密码：nihao
         </div>
       </el-form>
     </div>
@@ -1288,6 +1288,10 @@
         const handleLogin = () => {
           if (!loginForm.value.username || !loginForm.value.password) {
             ElementPlus.ElMessage.warning('请输入用户名和密码')
+            return
+          }
+          if (loginForm.value.username !== 'nihao' || loginForm.value.password !== 'nihao') {
+            ElementPlus.ElMessage.error('用户名或密码错误')
             return
           }
           loading.value = true
